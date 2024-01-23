@@ -56,8 +56,11 @@ nav.children[0].classList.add('active')
 //Ta bort classen logo på logotypen.
 
 let header = document.querySelector('header')
-header.children[0].classList.remove(logo)
+header.children[0].classList.remove('logo')
 
 // Lägg till ett nytt menyalternativ.
 
-
+let newMenuText = document.createElement('a')
+newMenuText.innerText = 'about'
+nav.appendChild(newMenuText)
+console.log(newMenuText.innerText)
