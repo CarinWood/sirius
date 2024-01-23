@@ -63,4 +63,61 @@ header.children[0].classList.remove('logo')
 let newMenuText = document.createElement('a')
 newMenuText.innerText = 'about'
 nav.appendChild(newMenuText)
-console.log(newMenuText.innerText)
+
+// Lägg till en ny produkt 
+let main = document.querySelector('main')
+let newProd = document.createElement('article')
+newProd.classList.add('art-1')
+main.insertAdjacentElement('beforeend', newProd) 
+
+//image
+let figure = document.createElement('figure')
+let image = document.createElement('img')
+image.src = 'img/hoodie-forrest.png'
+newProd.appendChild(figure)
+figure.appendChild(image)
+
+
+//h2
+let heading = document.createElement('h2')
+heading.innerText = 'Sinus Hoodie'
+newProd.appendChild(heading)
+
+//h3
+let colorName = document.createElement('h3')
+colorName.innerText = 'Forrest'
+newProd.appendChild(colorName)
+
+//p
+let newParagraph = document.createElement('p')
+newParagraph.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dolores.'
+newProd.appendChild(newParagraph)
+
+
+//button
+let newButton = document.createElement('button')
+newButton.innerText = 'add to cart'
+newProd.appendChild(newButton)
+
+/* Lyssna efter ett klick på logotypen (.logo). 
+När den registrerar ett klick skall du console.log:a "found you!"; */
+
+let logotype = header.children[0]
+logotype.addEventListener('click', function() {
+    console.log('found you!')
+})
+
+/* 
+Lyssna efter klick på samtliga produkter ( <article>). 
+När den registrerar ett klick skall du console.log:a 
+"Hi, Im article Fire / Ash / Water". */
+
+for (let i = 0; i < 4; i++) {
+    main.children[i].addEventListener('click', function() {
+        console.log('hello I\'m article', main.children[i].children[2].innerText)
+    })
+}
+  
+ 
+
+  
